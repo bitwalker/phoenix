@@ -45,8 +45,10 @@ defmodule Phoenix.Mixfile do
   end
 
   defp deps do
-    [{:cowboy, "~> 1.0", optional: true},
-     {:plug, "~> 1.2.1 or ~> 1.3"},
+    [{:ranch, github: "ninenines/ranch", ref: "master", optional: true, override: true},
+     {:cowlib, github: "ninenines/cowlib", ref: "master", optional: true, override: true},
+     {:cowboy, github: "ninenines/cowboy", ref: "master", optional: true},
+     {:plug, github: "bitwalker/plug", ref: "http2", override: true},
      {:phoenix_pubsub, "~> 1.0"},
      {:poison, "~> 2.2 or ~> 3.0"},
      {:gettext, "~> 0.8", only: :test},
